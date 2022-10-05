@@ -24,6 +24,7 @@ class LinkedList:
         if (temp):
           if temp.next == None:
             print("only one element in list")
+            return
           else:
             
             while(temp.next):
@@ -38,6 +39,18 @@ class LinkedList:
     def deleteInBetween(self, prev_node):
         print("code")
 
+    def deleteNode(self,key):
+        temp =self.head
+        while(temp):
+          if (temp.data==key):
+              last_sec.next=temp.next
+              last_sec=temp
+              temp=temp.next
+          else:
+              last_sec=temp
+              temp=temp.next
+              continue
+    
 # Code execution starts here
 if __name__=='__main__':
 
@@ -53,7 +66,8 @@ if __name__=='__main__':
     third.next=fourth
     
     lst.deleteFromBeginning()
-    lst.deleteFromEnd()
+   # lst.deleteFromEnd()
+    lst.deleteNode(3)
     
     lst.printing()
 
